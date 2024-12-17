@@ -20,15 +20,27 @@ echo $form->field($model, 'schedule')->widget(ScheduleInputWidget::class, [
 ActiveForm::end();
 
 vendor/
+
 └── your-namespace/
+
     └── schedule-input-widget/
+    
         └── src/
+        
             └── widgets/
+            
                 └── ScheduleInputWidget/
+                
                     ├── ScheduleInputWidget.php
+                    
                     ├── assets/
+                    
                     │   └── ScheduleInputAsset.php
+                    
                     ├── views/
+                    
                     │   └── schedule-input-widget.php
+                    
                     └── models/
+                    
                         └── ScheduleForm.php
