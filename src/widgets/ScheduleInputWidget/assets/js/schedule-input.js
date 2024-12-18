@@ -115,13 +115,13 @@ $(document).ready(function () {
 
     $('.edit-work-time').on('click', function () {
         $('.weekday-group .day').each(function (index) {
-            if (index < 5) {
-                $(this).find('.day-circle').addClass('highlighted-circle');
-                $(this).find('.day-circle .day-name').addClass('text-white');
-                // $(this).find('.day-circle').removeClass('highlighted-circle');
-            } else if (index > 0) {
-                $(this).find('.day-circle .day-name').addClass('text-black');
-            }
+            // if (index < 5) {
+            //     $(this).find('.day-circle').addClass('highlighted-circle');
+            //     $(this).find('.day-circle .day-name').addClass('text-white');
+            //     // $(this).find('.day-circle').removeClass('highlighted-circle');
+            // } else if (index > 0) {
+            //     $(this).find('.day-circle .day-name').addClass('text-black');
+            // }
         });
         $('.time-selection input[type="time"]').prop('disabled', false);
         $('.day input[type="checkbox"][name="days"]').removeAttr('disabled');
@@ -131,12 +131,62 @@ $(document).ready(function () {
             
             $('.remove-work-time').addClass('can-remove');
             $('.can-remove').removeClass('remove-work-time');
+            $('.edit-work-time').addClass('check-work-time');
+            $('.check-work-time').removeClass('edit-work-time');
+            $('.day').removeClass('disabled');
+            updateStyles();
+
         });
     
-        $(document).on('click', '.can-remove', function () {
-            $('input[type="checkbox"][name="days"]').prop('checked', false).prop('disabled', false);
-    
-            $('input[type="time"]').val('');
-        });
+
+
+
+//  // Функция для обновления стиля для всех чекбоксов
+ function updateStyles() {
+    $('input[name="days"]').each(function() {
+        var isChecked = $(this).prop('checked'); // Получаем состояние чекбокса
+        var dayCircle = $(this).siblings('.day-circle'); // Находим соседний div.day-circle
+        
+        if (isChecked) {
+            // Если чекбокс включен, добавляем классы
+            dayCircle.addClass('highlighted-circle');
+            dayCircle.find('.day-name').addClass('text-white');
+        } else {
+            // Если чекбокс выключен, убираем классы
+            dayCircle.removeClass('highlighted-circle');
+            dayCircle.find('.day-name').removeClass('text-white');
+        }
+    });
+}
+
+$(document).on('click', '.can-remove', function () {
+    $('input[type="checkbox"][name="days"]').prop('checked', false).prop('disabled', false);
+    updateStyles();
+    $('input[type="time"]').val('00:00');;
+});
+
+// // Обработчик события изменения состояния всех чекбоксов
+$('input[name="days"]').on('change', function() {
+    updateStyles();
+});
+
+
+$(document).on('change', '.checkbox', function () {
+    if (!$(this).prop('disabled')) {
+        // Убираем старые классы enabled
+        $(this).removeClass('enabled-on enabled-off');
+        // Добавляем новый класс
+        $(this).addClass($(this).is(':checked') ? 'enabled-on' : 'enabled-off');
+        
+        // Находим div day-circle в том же родительском day
+        const $dayCircle = $(this).closest('.day').find('.day-circle');
+        if ($(this).is(':checked')) {
+            $dayCircle.addClass('circle-checked').removeClass('circle-unchecked');
+        } else {
+            $dayCircle.addClass('circle-unchecked').removeClass('circle-checked');
+        }
+    }
+});
 
 });
+

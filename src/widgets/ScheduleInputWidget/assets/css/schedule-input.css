@@ -138,7 +138,8 @@ body {
 .day-circle {
     width: 24px;
     height: 24px;
-    background-color: #A9E3BB;
+    /* background-color: #A9E3BB; */
+    background-color: #F7F7F7;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -491,7 +492,9 @@ button:hover {
 }
 
 .edit-work-time::before,
-.remove-work-time::before {
+.remove-work-time::before,
+.can-remove::before,
+.check-work-time::before {
     content: '';
     display: block;
     width: 16px;
@@ -506,6 +509,17 @@ button:hover {
 
 .remove-work-time::before {
     background: url('../images/delete.png') no-repeat center center;
+    background-size: contain;
+}
+
+
+.can-remove::before {
+    background: url('../images/can.png') no-repeat center center;
+    background-size: contain;
+}
+
+.check-work-time::before {
+    background: url('../images/check.png') no-repeat center center;
     background-size: contain;
 }
 
@@ -580,4 +594,10 @@ button:hover {
     background-color: #28B956;
     border: 0px;
     color: #ffffff;
-  }
+}
+.day input[type="checkbox"]:checked:disabled ~ .day-circle{
+    background-color: #A9E3BB;
+}
+input[name="days"] {
+    display: none;
+}
