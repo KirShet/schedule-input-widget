@@ -188,5 +188,23 @@ $(document).on('change', '.checkbox', function () {
     }
 });
 
+    // Используем .on для отслеживания событий
+    $(document).on('click', '.check-work-time', function() {
+        // Действие при нажатии на кнопку
+        console.log('Кнопка нажата!');
+
+        $('.time-selection input[type="time"]').each(function() {
+            let value = $(this).val(); // Получаем значение текущего input
+    
+            if (value == '00:00' || value === '') {
+                $(this).addClass('border-danger');
+                console.log('Поле времени пустое!');
+            } else {
+                console.log('Введено время: ' + value);
+            }
+        });
+
+    });
+
 });
 

@@ -344,6 +344,12 @@ body {
 .modal-wrapper h2 {
     font-size: var(--font-size-heading);
     margin-bottom: 10px;
+        width: 270px;
+        height: 23px;
+        left: 25px;
+        top: 25px;
+        font-weight: 600;
+        color: #424242;
 }
 
 .modal-wrapper p {
@@ -377,7 +383,6 @@ body {
 
 .days div {
     padding: 5px;
-    border: 1px solid var(--color-border);
     border-radius: 4px;
     margin: 2px;
     cursor: pointer;
@@ -424,11 +429,25 @@ input[type="time"] {
 }
 
 .add-btn {
-    color: #ffffff;
+        width: 100px;
+        height: 32px;
+        background: #731982;
+        border-radius: 100px;   
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 0px;
+        color: #FFFFFF;
 }
 
 .cancel-btn {
-    color: #ffffff;
+    box-sizing: border-box;
+    width: 100px;
+    height: 32px;
+    border: 1px solid #424242;
+    border-radius: 100px;
+    color: #424242;
+    line-height: 0px;
 }
 
 .open-modal-btn {
@@ -562,7 +581,6 @@ button:hover {
     justify-content: space-between;
 }
 
-.cancel-btn,
 .delete-btn {
     width: 90px;
     height: 32px;
@@ -571,12 +589,7 @@ button:hover {
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-}
-
-.cancel-btn {
-    background: #BABABA;
-    color: #FFFFFF;
-}
+}   
 
 .delete-btn {
     background: #CA4738;
@@ -600,4 +613,29 @@ button:hover {
 }
 input[name="days"] {
     display: none;
+}
+.weekdays div {
+    color: #dbdbdb;
+}
+.weekdays div:nth-last-child(-n+2),
+.days div:nth-child(6),
+.days div:nth-child(7),
+.days div:nth-child(13),
+.days div:nth-child(14),
+.days div:nth-child(20),
+.days div:nth-child(21),
+.days div:nth-child(27),
+.days div:nth-child(28),
+.days div:nth-child(34),
+.days div:nth-child(35) {
+    color: red;     
+}
+
+.time-selection-wrapper input[type="time"]::-webkit-inner-spin-button,
+.time-selection-wrapper input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none; 
+}
+
+.time-selection-wrapper input[type="time"] {
+    -moz-appearance: textfield; 
 }
