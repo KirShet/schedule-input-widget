@@ -188,7 +188,7 @@ body {
 
 .icon-margin {
     margin-left: 5px;
-    background-image: url('/images/help.png');
+    background-image: url('../images/help.png');
     background-size: cover;
     background-repeat: no-repeat;
     width: 20px;
@@ -261,7 +261,7 @@ body {
 .switch.active .switch-thumb {
     margin-left: 16px;
     background-color: #28B956;
-    background-image: url('/images/thumb.png');
+    background-image: url('../images/thumb.png');
     background-size: cover; 
     background-repeat: no-repeat;
 }
@@ -270,7 +270,7 @@ body {
     background: #74CF8A;
 }
 .abc1 {
-    background-image: url('/images/delete.png');
+    background-image: url('../images/delete.png');
     background-size: cover;
     background-repeat: no-repeat;
     width: 16px;
@@ -281,7 +281,7 @@ body {
     justify-content: center;
 }
 .abc2 {
-    background-image: url('/images/stylus.png');
+    background-image: url('../images/stylus.png');
     background-size: cover;
     background-repeat: no-repeat;
     width: 16px;
@@ -500,12 +500,12 @@ button:hover {
 }
 
 .edit-work-time::before {
-    background: url('/images/stylus.png') no-repeat center center;
+    background: url('../images/stylus.png') no-repeat center center;
     background-size: contain;
 }
 
 .remove-work-time::before {
-    background: url('/images/delete.png') no-repeat center center;
+    background: url('../images/delete.png') no-repeat center center;
     background-size: contain;
 }
 
@@ -573,3 +573,11 @@ button:hover {
     visibility: visible;
     opacity: 1;
 }
+.hidden-checkbox {
+    display: none;
+}
+.highlighted-circle {
+    background-color: #28B956;
+    border: 0px;
+    color: #ffffff;
+  }

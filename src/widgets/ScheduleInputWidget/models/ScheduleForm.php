@@ -1,6 +1,6 @@
 <?php
 
-namespace common\models;
+namespace YourVendor\YourWidgetPackage\widgets\ScheduleInputWidget\models;
 
 use yii\base\Model;
 

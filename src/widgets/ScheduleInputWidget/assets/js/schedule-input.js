@@ -102,4 +102,41 @@ $(document).ready(function () {
     $('form').on('submit', function(event) {
         event.preventDefault();
     });
+
+    $('.action-row .switch').click(function() {
+        var checkboxes = $(this).closest('.action-row').find('input[type="checkbox"]');
+        
+        checkboxes.each(function() {
+            $(this).prop('checked', !$(this).prop('checked'));
+        });
+        
+        $(this).toggleClass('active');
+    });
+
+    $('.edit-work-time').on('click', function () {
+        $('.weekday-group .day').each(function (index) {
+            if (index < 5) {
+                $(this).find('.day-circle').addClass('highlighted-circle');
+                $(this).find('.day-circle .day-name').addClass('text-white');
+                // $(this).find('.day-circle').removeClass('highlighted-circle');
+            } else if (index > 0) {
+                $(this).find('.day-circle .day-name').addClass('text-black');
+            }
+        });
+        $('.time-selection input[type="time"]').prop('disabled', false);
+        $('.day input[type="checkbox"][name="days"]').removeAttr('disabled');
+    });
+
+        $('.edit-work-time').on('click', function () {
+            
+            $('.remove-work-time').addClass('can-remove');
+            $('.can-remove').removeClass('remove-work-time');
+        });
+    
+        $(document).on('click', '.can-remove', function () {
+            $('input[type="checkbox"][name="days"]').prop('checked', false).prop('disabled', false);
+    
+            $('input[type="time"]').val('');
+        });
+
 });

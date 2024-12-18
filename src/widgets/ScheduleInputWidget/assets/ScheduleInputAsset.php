@@ -1,12 +1,12 @@
 <?php
 
-namespace common\widgets\ScheduleInputWidget\assets;
+namespace YourVendor\YourWidgetPackage\widgets\ScheduleInputWidget\assets;
 
 use yii\web\AssetBundle;
 
 class ScheduleInputAsset extends AssetBundle
 {
-    public $sourcePath = '@common/widgets/ScheduleInputWidget/assets';
+    public $sourcePath = '@vendor/your-namespace/schedule-input-widget/src/widgets/ScheduleInputWidget/assets';
     public $css = [
         'css/schedule-input.css',
     ];
@@ -19,3 +19,4 @@ class ScheduleInputAsset extends AssetBundle
     ];  
     public $publishOptions = ['forceCopy' => true];
 }
+// advanced-app2/vendor/your-namespace/schedule-input-widget/src/widgets/ScheduleInputWidget/assets/ScheduleInputAsset.php

@@ -6,67 +6,87 @@
  */
 ?>
 <div class="container">
-    <div class="frame schedule-widget">
+    <div class="frame schedule-widget card p-3">
         <div class="header">Рабочие часы</div>
         <div class="sub-header">Установить рабочие часы</div>
         <div class="divider"></div>
 
         <div class="action-row">
             <div class="schedule-label">
-    <label class="schedule-label">
-        <input type="checkbox" name="<?= htmlspecialchars($name) ?>[enable_time_zone]" value="1" <?= $enableTimeZone ? 'checked' : '' ?>>
-        Учитывать часовой пояс
-    </label>
+                <label class="schedule-label">
+                    <input type="checkbox" name="<?= htmlspecialchars($name) ?>[enable_time_zone]" value="1" <?= $enableTimeZone ? 'checked' : '' ?> class="hidden-checkbox">
+                    Учитывать часовой пояс
+                </label>
                 <div class="icon-margin day disabled"></div>
             </div>
-            <div class="switch active">
+            <div class="switch <?php echo $enableTimeZone ? 'active' : ''; ?>" id="timezone-switch">
                 <div class="switch-thumb"></div>
             </div>
         </div>
 
         <div class="action-row">
             <div class="schedule-label-with-icon">
-    <label class="schedule-label">
-        <input type="checkbox" name="<?= htmlspecialchars($name) ?>[enable_production_calendar]" value="1" <?= $enableProductionCalendar ? 'checked' : '' ?>>
-        Использовать производственный календарь
-    </label>
+                <label class="schedule-label">
+                    <input type="checkbox" name="<?= htmlspecialchars($name) ?>[enable_production_calendar]" value="1" <?= $enableProductionCalendar ? 'checked' : '' ?> class="hidden-checkbox">
+                    Использовать производственный календарь
+                </label>
                 <div class="icon-margin day disabled"></div>
             </div>
-            <div class="switch">
+            <div class="switch <?php echo $enableProductionCalendar ? 'active' : ''; ?>">
                 <div class="switch-thumb"></div>
             </div>
         </div>
+
         <div class="days-wrapper">
             <div class="weekday-group">
-                <div class="day"><div class="day-circle"><span class="day-name">Пн</span></div></div>
-                <div class="day"><div class="day-circle"><span class="day-name">Вт</span></div></div>
-                <div class="day"><div class="day-circle"><span class="day-name">Ср</span></div></div>
-                <div class="day"><div class="day-circle"><span class="day-name">Чт</span></div></div>
-                <div class="day"><div class="day-circle"><span class="day-name">Пт</span></div></div>
-                <div class="day disabled"><div class="day-circle"><span class="day-name">Сб</span></div></div>
-                <div class="day disabled"><div class="day-circle"><span class="day-name">Вс</span></div></div>
+                <label class="day">
+                    <input type="checkbox" name="days" value="Пн" disabled checked>
+                    <div class="day-circle"><span class="day-name">Пн</span></div>
+                </label>
+                <label class="day">
+                    <input type="checkbox" name="days" value="Вт" disabled checked>
+                    <div class="day-circle"><span class="day-name">Вт</span></div>
+                </label>
+                <label class="day">
+                    <input type="checkbox" name="days" value="Ср" disabled checked>
+                    <div class="day-circle"><span class="day-name">Ср</span></div>
+                </label>
+                <label class="day">
+                    <input type="checkbox" name="days" value="Чт" disabled checked>
+                    <div class="day-circle"><span class="day-name">Чт</span></div>
+                </label>
+                <label class="day">
+                    <input type="checkbox" name="days" value="Пт" disabled checked>
+                    <div class="day-circle"><span class="day-name">Пт</span></div>
+                </label>
+                <label class="day disabled">
+                    <input type="checkbox" name="days" value="Сб" disabled>
+                    <div class="day-circle"><span class="day-name">Сб</span></div>
+                </label>
+                <label class="day disabled">
+                    <input type="checkbox" name="days" value="Вс" disabled>
+                    <div class="day-circle"><span class="day-name">Вс</span></div>
+                </label>
             </div>
             <div class="time-selection">
-                <div class="time-box">12:00</div>
+                <input type="time" value="12:00" disabled>
                 <div class="time-divider"></div>
-                <div class="time-box">19:00</div>
+                <input type="time" value="19:00" disabled>
             </div>
             <div class="action-buttons">
                 <button type="button" class="edit-work-time" title="Редактировать"></button>
                 <button type="button" class="remove-work-time" title="Удалить"></button>
             </div>
         </div>
-
-    <div class="button-group schedule-row">
+        <div id="work-time-container"></div>
+    <div class="button-group schedule-row d-flex align-items-center">
         <button type="button" class="btn btn-primary add-work-time button add-time-button">Добавить рабочие часы</button>
         <button type="button" class="btn btn-secondary add-special-time button add-special-day-button">Добавить особенные дни</button>
     </div>
 
-    <!-- Контейнеры для добавляемых рабочих часов и особенных дней -->
-    <div id="work-time-container"></div>
     <div id="special-time-container"></div>
 
-    <!-- Скрытые поля для передачи данных -->
+    <!--  -->
     <input type="hidden" name="<?= htmlspecialchars($name) ?>[work_times]" id="work-times-data">
     <input type="hidden" name="<?= htmlspecialchars($name) ?>[special_times]" id="special-times-data">
 
