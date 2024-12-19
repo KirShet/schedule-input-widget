@@ -195,7 +195,26 @@ body {
     width: 20px;
     height: 20px;
 }
-
+.icon-arrow {
+    margin-left: 5px;
+    background-image: url('../arrow_forward_ios.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+}
+.arrow_forward {
+    background-image: url('../images/arrow_forward_ios.png');
+    margin-left: auto;
+}
+.arrow_back {
+    background-image: url('../images/arrow_back_ios_new.png');
+    margin-right: auto;
+}
+.month .month-name{
+    display: flex;
+    justify-content: center;
+}
 .action-row {
     display: flex;
     width: 100%;
