@@ -100,7 +100,7 @@
             <section class="calendar">
             <div class="icon-arrow arrow_back"></div>
                 <article class="month">
-                    <div class="month-name">Ноябрь 2024</div>
+                    <h3>Ноябрь 2024</h3>
                         <div class="weekdays"><div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div></div>
                         <div class="days">
                             <div></div><div></div><div></div><div></div><div>1</div><div>2</div><div>3</div>
@@ -115,7 +115,7 @@
                         </div>
                     </article>
                     <article class="month">
-                    <div class="month-name">Декабрь 2024</div>
+                    <h3>Декабрь 2024</h3>
                         <div class="weekdays"><div>Пн</div><div>Вт</div><div>Ср</div><div>Чт</div><div>Пт</div><div>Сб</div><div>Вс</div></div>
                         <div class="days">
                             <div></div><div></div><div></div><div></div><div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div>

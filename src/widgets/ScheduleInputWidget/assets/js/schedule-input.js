@@ -69,9 +69,9 @@ $(document).ready(function () {
                     <span class="work-date">${selectedDate}</span>
                 </div>
                 <div class="time-selection">
-                    <div class="time-box">${startTime}</div>
+                    <input type="time" value="${startTime}" disabled>
                     <div class="time-divider"></div>
-                    <div class="time-box">${endTime}</div>
+                    <input type="time" value="${endTime}" disabled>
                 </div>
                 <div class="action-buttons">
                     <button type="button" class="edit-work-time" title="Редактировать"></button>
