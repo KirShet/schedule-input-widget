@@ -17,7 +17,7 @@
                     <input type="checkbox" name="<?= htmlspecialchars($name) ?>[enable_time_zone]" value="1" <?= $enableTimeZone ? 'checked' : '' ?> class="hidden-checkbox">
                     Учитывать часовой пояс
                 </label>
-                <div class="icon-margin day disabled"></div>
+                <div data-tooltip="Всплывающая подсказка сообщает о чём-то многозначном и полезном..." class="icon-margin day disabled"></div>
             </div>
             <div class="switch <?php echo $enableTimeZone ? 'active' : ''; ?>" id="timezone-switch">
                 <div class="switch-thumb"></div>
@@ -30,7 +30,7 @@
                     <input type="checkbox" name="<?= htmlspecialchars($name) ?>[enable_production_calendar]" value="1" <?= $enableProductionCalendar ? 'checked' : '' ?> class="hidden-checkbox">
                     Использовать производственный календарь
                 </label>
-                <div class="icon-margin day disabled"></div>
+                <div data-tooltip="Всплывающая подсказка сообщает о чём-то многозначном и полезном..." class="icon-margin day disabled"></div>
             </div>
             <div class="switch <?php echo $enableProductionCalendar ? 'active' : ''; ?>">
                 <div class="switch-thumb"></div>

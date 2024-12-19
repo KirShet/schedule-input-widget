@@ -639,3 +639,37 @@ input[name="days"] {
 .time-selection-wrapper input[type="time"] {
     -moz-appearance: textfield; 
 }
+    [data-tooltip] {
+    position: relative;
+   }
+   [data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    width: 300px;
+    left: 0; top: 0;
+    background: #ffffff;
+    color: #8d8d8d;
+    padding: 0.5em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    opacity: 0;
+    transition: 1s;
+    border-radius: 5px;
+    z-index: 1;
+   } 
+   [data-tooltip]:hover::after {
+    opacity: 1;
+    top: 2em;
+   }
+
+   .border-thick-slow {
+    border-color: rgb(255, 0, 0);
+    padding: 20px;
+    animation: shrinkBorder 3s forwards;
+  }
+   @keyframes shrinkBorder {
+    0% {
+        border-color: rgb(255, 0, 0);}
+    100% {
+        border-color: var(--color-border);}
+  }
