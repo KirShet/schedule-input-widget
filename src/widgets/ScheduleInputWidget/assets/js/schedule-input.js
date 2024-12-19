@@ -205,17 +205,21 @@ $(document).on('change', '.checkbox', function () {
             let value = $(this).val();
 
             $(this).removeClass('border-thick-slow');
-            setTimeout(() => {
+            
                 if (value == '00:00' || value === '') {
-                    $(this).addClass('border-thick-slow');
+                    setTimeout(() => {
+                        $(this).addClass('border-thick-slow');
+                    }, 100);
                     isAnyMatching = true;
+                    console.log("11"+isAnyMatching);
                 }
-            }, 100);
 
+            console.log("22"+isAnyMatching);
 
         });
 
         if (!isAnyMatching) {
+            console.log("33"+isAnyMatching);
             var parentWrapper = $(this).closest('.days-wrapper');
             parentWrapper.find('.time-selection input[type="time"]').prop('disabled', true);
             $(this).closest('.days-wrapper').find('.day input[type="checkbox"][name="days"]').addClass('disabled');

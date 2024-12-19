@@ -1,18 +1,18 @@
 {
-    "name": "kirshet/yii2",
+    "name": "your-namespace/schedule-input-widget",
     "description": "Schedule input widget for Yii2",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Кирилл Шетько",
-            "email": "kirshet2000@gmail.com"
+            "email": "KirShet"
         }
     ],
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "kirshet\\yii2\\": "src/"
+            "YourVendor\\YourWidgetPackage\\": "src/"
         }
     },
     "require": {
@@ -20,7 +20,7 @@
     },
     "extra": {
         "installer-paths": {
-            "common/widgets/{$name}/": ["kirshet/yii2"]
+            "common/widgets/{$name}/": ["your-vendor/your-widget-package"]
         }
     }
 }
