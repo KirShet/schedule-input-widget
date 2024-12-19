@@ -114,12 +114,11 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.edit-work-time', function () {
-        console.log("11");
         $('.time-selection input[type="time"]').prop('disabled', false);
         $(this).closest('.days-wrapper').find('.day input[type="checkbox"][name="days"]').removeAttr('disabled');
     });
 
-        $('.edit-work-time').on('click', function () {
+        $(document).on('click', '.edit-work-time', function () {
             
             $('.remove-work-time').addClass('can-remove');
             $('.can-remove').removeClass('remove-work-time');
