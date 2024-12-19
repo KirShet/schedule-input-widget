@@ -124,7 +124,7 @@ $(document).ready(function () {
             // }
         });
         $('.time-selection input[type="time"]').prop('disabled', false);
-        $('.day input[type="checkbox"][name="days"]').removeAttr('disabled');
+        $(this).closest('.days-wrapper').find('.day input[type="checkbox"][name="days"]').removeAttr('disabled');
     });
 
         $('.edit-work-time').on('click', function () {
@@ -192,10 +192,12 @@ $(document).on('change', '.checkbox', function () {
 
         $('.time-selection input[type="time"]').each(function() {
             let value = $(this).val();
-    
-            if (value == '00:00' || value === '') {
-                $(this).addClass('border-thick-slow');
-            }
+            $(this).removeClass('border-thick-slow');
+            setTimeout(() => {
+                if (value == '00:00' || value === '') {
+                    $(this).addClass('border-thick-slow');
+                }
+            }, 500);
         });
 
     });
