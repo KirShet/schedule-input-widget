@@ -151,6 +151,13 @@ $(document).ready(function () {
         }
     });
 }
+function disabled() {
+    $('input[name="days"]').each(function() {
+        var isChecked = $(this).prop('checked'); // Получаем состояние чекбокса
+        var dayCircle = $(this).siblings('.day-circle'); // Находим соседний div.day-circle
+        $('input[name="days"]').not(this).prop('disabled', true);
+    });
+}
 
 $(document).on('click', '.can-remove', function () {
     var parentWrapper = $(this).closest('.days-wrapper');
@@ -182,17 +189,44 @@ $(document).on('change', '.checkbox', function () {
     }
 });
 
+// Определяем именную функцию
+// function enableWorkTimeEditing() {
+//     console.log('22')
+//     var parentWrapper = $(this).closest('.days-wrapper');
+//     parentWrapper.find('.time-selection input[type="time"]').prop('disabled', true);
+//     $(this).closest('.days-wrapper').find('.day input[type="checkbox"][name="days"]').addClass('disabled');
+// }
+
     $(document).on('click', '.check-work-time', function() {
+
+        let isAnyMatching = false;
 
         $('.time-selection input[type="time"]').each(function() {
             let value = $(this).val();
+
             $(this).removeClass('border-thick-slow');
             setTimeout(() => {
                 if (value == '00:00' || value === '') {
                     $(this).addClass('border-thick-slow');
+                    isAnyMatching = true;
                 }
-            }, 500);
+            }, 100);
+
+
         });
+
+        if (!isAnyMatching) {
+            var parentWrapper = $(this).closest('.days-wrapper');
+            parentWrapper.find('.time-selection input[type="time"]').prop('disabled', true);
+            $(this).closest('.days-wrapper').find('.day input[type="checkbox"][name="days"]').addClass('disabled');
+
+            parentWrapper.find('.can-remove').addClass('remove-work-time');
+            parentWrapper.find('.remove-work-time').removeClass('can-remove');
+            parentWrapper.find('.check-work-time').addClass('edit-work-time');
+            parentWrapper.find('.edit-work-time').removeClass('check-work-time');
+            parentWrapper.find('.disabled').removeClass('day');
+            disabled();
+        }
 
     });
 

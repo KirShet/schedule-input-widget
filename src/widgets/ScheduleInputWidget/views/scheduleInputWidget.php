@@ -41,31 +41,31 @@
             <div class="weekday-group">
                 <label class="day">
                     <input type="checkbox" name="days" value="Пн" disabled checked>
-                    <div class="day-circle"><span class="day-name">Пн</span></div>
+                    <div class="day-circle"><span class="day-name text-white">Пн</span></div>
                 </label>
                 <label class="day">
                     <input type="checkbox" name="days" value="Вт" disabled checked>
-                    <div class="day-circle"><span class="day-name">Вт</span></div>
+                    <div class="day-circle"><span class="day-name text-white">Вт</span></div>
                 </label>
                 <label class="day">
                     <input type="checkbox" name="days" value="Ср" disabled checked>
-                    <div class="day-circle"><span class="day-name">Ср</span></div>
+                    <div class="day-circle"><span class="day-name text-white">Ср</span></div>
                 </label>
                 <label class="day">
                     <input type="checkbox" name="days" value="Чт" disabled checked>
-                    <div class="day-circle"><span class="day-name">Чт</span></div>
+                    <div class="day-circle"><span class="day-name text-white">Чт</span></div>
                 </label>
                 <label class="day">
                     <input type="checkbox" name="days" value="Пт" disabled checked>
-                    <div class="day-circle"><span class="day-name">Пт</span></div>
+                    <div class="day-circle"><span class="day-name text-white">Пт</span></div>
                 </label>
                 <label class="day disabled">
                     <input type="checkbox" name="days" value="Сб" disabled>
-                    <div class="day-circle"><span class="day-name">Сб</span></div>
+                    <div class="day-circle"><span class="day-name text-white">Сб</span></div>
                 </label>
                 <label class="day disabled">
                     <input type="checkbox" name="days" value="Вс" disabled>
-                    <div class="day-circle"><span class="day-name">Вс</span></div>
+                    <div class="day-circle"><span class="day-name text-white">Вс</span></div>
                 </label>
             </div>
             <div class="time-selection">
