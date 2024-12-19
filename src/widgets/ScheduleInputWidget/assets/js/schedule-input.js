@@ -114,17 +114,19 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.edit-work-time', function () {
-        $('.time-selection input[type="time"]').prop('disabled', false);
+        var parentWrapper = $(this).closest('.days-wrapper');
+        parentWrapper.find('.time-selection input[type="time"]').prop('disabled', false);
         $(this).closest('.days-wrapper').find('.day input[type="checkbox"][name="days"]').removeAttr('disabled');
     });
 
         $(document).on('click', '.edit-work-time', function () {
+            var parentWrapper = $(this).closest('.days-wrapper');
             
-            $('.remove-work-time').addClass('can-remove');
-            $('.can-remove').removeClass('remove-work-time');
-            $('.edit-work-time').addClass('check-work-time');
-            $('.check-work-time').removeClass('edit-work-time');
-            $('.day').removeClass('disabled');
+            parentWrapper.find('.remove-work-time').addClass('can-remove');
+            parentWrapper.find('.can-remove').removeClass('remove-work-time');
+            parentWrapper.find('.edit-work-time').addClass('check-work-time');
+            parentWrapper.find('.check-work-time').removeClass('edit-work-time');
+            parentWrapper.find('.day').removeClass('disabled');
             updateStyles();
 
         });
