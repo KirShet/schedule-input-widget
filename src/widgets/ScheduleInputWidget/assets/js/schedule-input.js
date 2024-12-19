@@ -113,16 +113,8 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     });
 
-    $('.edit-work-time').on('click', function () {
-        $('.weekday-group .day').each(function (index) {
-            // if (index < 5) {
-            //     $(this).find('.day-circle').addClass('highlighted-circle');
-            //     $(this).find('.day-circle .day-name').addClass('text-white');
-            //     // $(this).find('.day-circle').removeClass('highlighted-circle');
-            // } else if (index > 0) {
-            //     $(this).find('.day-circle .day-name').addClass('text-black');
-            // }
-        });
+    $(document).on('click', '.edit-work-time', function () {
+        console.log("11");
         $('.time-selection input[type="time"]').prop('disabled', false);
         $(this).closest('.days-wrapper').find('.day input[type="checkbox"][name="days"]').removeAttr('disabled');
     });
