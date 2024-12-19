@@ -153,9 +153,10 @@ $(document).ready(function () {
 }
 
 $(document).on('click', '.can-remove', function () {
-    $('input[type="checkbox"][name="days"]').prop('checked', false).prop('disabled', false);
+    var parentWrapper = $(this).closest('.days-wrapper');
+    parentWrapper.find('input[type="checkbox"][name="days"]').prop('checked', false).prop('disabled', false);
     updateStyles();
-    $('input[type="time"]').val('00:00');;
+    parentWrapper.find('input[type="time"]').val('00:00');;
 });
 
 // // Обработчик события изменения состояния всех чекбоксов
