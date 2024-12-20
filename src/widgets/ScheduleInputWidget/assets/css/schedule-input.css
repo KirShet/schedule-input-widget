@@ -493,6 +493,9 @@ input[type="time"] {
 #work-time-container{
     width: 100%;
 }
+#special-time-container{
+    width: 100%;
+}
 .work-time-info {
     display: flex;
     flex-direction: row;

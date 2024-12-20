@@ -3,6 +3,7 @@ $(document).ready(function () {
     const modalMessage = $('.modal-overlay-message');
     const selectedDateSpan = $('#selected-date');
     const workTimeContainer = $('#work-time-container');
+    const specialTimeContainer = $('#special-time-container');
 
     let firstDate = null; // Переменная для хранения первой выбранной даты
     let secondDate = null; // Переменная для второй даты
@@ -233,6 +234,58 @@ $(document).on('change', '.checkbox', function () {
         }
 
     });
+
+        // Добавление рабочей часа по нажатию на "Добавить"
+        $('.add-work-time').on('click', function () {   
+            
+            const newEntry = `
+                        <div class="days-wrapper">
+            <div class="weekday-group">
+                <label class="day">
+                    <input type="checkbox" name="days" value="Пн" disabled checked>
+                    <div class="day-circle"><span class="day-name text-white">Пн</span></div>
+                </label>
+                <label class="day">
+                    <input type="checkbox" name="days" value="Вт" disabled checked>
+                    <div class="day-circle"><span class="day-name text-white">Вт</span></div>
+                </label>
+                <label class="day">
+                    <input type="checkbox" name="days" value="Ср" disabled checked>
+                    <div class="day-circle"><span class="day-name text-white">Ср</span></div>
+                </label>
+                <label class="day">
+                    <input type="checkbox" name="days" value="Чт" disabled checked>
+                    <div class="day-circle"><span class="day-name text-white">Чт</span></div>
+                </label>
+                <label class="day">
+                    <input type="checkbox" name="days" value="Пт" disabled checked>
+                    <div class="day-circle"><span class="day-name text-white">Пт</span></div>
+                </label>
+                <label class="day disabled">
+                    <input type="checkbox" name="days" value="Сб" disabled>
+                    <div class="day-circle"><span class="day-name text-white">Сб</span></div>
+                </label>
+                <label class="day disabled">
+                    <input type="checkbox" name="days" value="Вс" disabled>
+                    <div class="day-circle"><span class="day-name text-white">Вс</span></div>
+                </label>
+            </div>
+            <div class="time-selection">
+                <input type="time" value="12:00" disabled>
+                <div class="time-divider"></div>
+                <input type="time" value="19:00" disabled>
+            </div>
+            <div class="action-buttons">
+                <button type="button" class="edit-work-time" title="Редактировать"></button>
+                <button type="button" class="remove-work-time" title="Удалить"></button>
+            </div>
+        </div>
+                    `;
+                specialTimeContainer.append(newEntry);
+            
+            modalOverlay.removeClass('show');
+            resetDates();
+        });
 
 });
 

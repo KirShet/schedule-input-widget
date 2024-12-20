@@ -78,6 +78,7 @@
                 <button type="button" class="remove-work-time" title="Удалить"></button>
             </div>
         </div>
+        <div id="special-time-container"></div>
         <div id="work-time-container"></div>
     <div class="button-group schedule-row d-flex align-items-center">
         <button type="button" class="btn btn-primary add-work-time button time-button-add">Добавить рабочие часы</button>
@@ -88,8 +89,6 @@
         </button> -->
 
     </div>
-
-    <div id="special-time-container"></div>
 
     <!--  -->
     <input type="hidden" name="<?= htmlspecialchars($name) ?>[work_times]" id="work-times-data">
