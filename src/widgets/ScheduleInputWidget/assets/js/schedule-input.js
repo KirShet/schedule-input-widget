@@ -115,6 +115,10 @@ $(document).ready(function () {
             }
         });
     });
+        // Закрытие модального окна
+        $('.calendar-cancel-btn').on('click', function () {
+            modalOverlay.removeClass('show');
+        });
 
     $('form').on('submit', function(event) {
         event.preventDefault();

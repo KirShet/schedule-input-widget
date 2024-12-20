@@ -90,8 +90,8 @@
         <div id="special-time-container"></div>
         <div id="work-time-container"></div>
     <div class="button-group schedule-row d-flex align-items-center">
-        <button type="button" class="btn btn-primary add-work-time button time-button-add">Добавить рабочие часы</button>
-        <button type="button" class="btn btn-secondary add-special-time button add-special-day-button">Добавить особенные дни</button>
+        <button type="button" class="btn btn-primary add-work-time button-calendar time-button-add">Добавить рабочие часы</button>
+        <button type="button" class="btn btn-secondary add-special-time button-calendar add-special-day-button">Добавить особенные дни</button>
         <!-- <button class="add-time-button btn d-flex justify-content-center align-items-center w-50 p-0 mt-3 border border-dashed rounded-pill fw-semibold text-white" 
         style="background-color: #28B956; border-color: #28B956; height: 32px; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;">
             Текст кнопки
@@ -152,7 +152,7 @@
             <div class="divider"></div>
             <div class="buttons">
                 <button class="add-btn">Добавить</button>
-                <button class="cancel-btn">Отменить</button>
+                <button class="calendar-cancel-btn">Отменить</button>
             </div>
         </div>
 </div>
