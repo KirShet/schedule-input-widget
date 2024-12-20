@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    const modalOverlay = $('#modal-overlay');
+    const modalOverlay = $('#calendar-modal-overlay');
     const selectedDateSpan = $('#selected-date');
     const workTimeContainer = $('#work-time-container');
     const specialTimeContainer = $('#special-time-container');
@@ -217,8 +217,10 @@ $(document).on('change', '.checkbox', function () {
     $(document).on('click', '.check-work-time', function() {
 
         let isAnyMatching = false;
+        // Найти ближайший родительский элемент с классом .days-wrapper
+        var parentWrapper = $(this).closest('.days-wrapper');
 
-        $('.time-selection input[type="time"]').each(function() {
+        parentWrapper.find('.time-selection input[type="time"]').each(function() {
             let value = $(this).val();
 
             $(this).removeClass('border-thick-slow');

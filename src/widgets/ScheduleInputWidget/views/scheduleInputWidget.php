@@ -106,7 +106,7 @@
     </div>
 </div>
 
-<div class="modal-overlay" id="modal-overlay" aria-labelledby="modal-title" aria-describedby="modal-description" role="dialog">
+<div class="calendar-modal-overlay" id="calendar-modal-overlay" aria-labelledby="modal-title" aria-describedby="modal-description" role="dialog">
         <div class="modal-wrapper">
             <h2 id="modal-title">Добавление особенного дня</h2>
             <p id="modal-description">Выберите день или период, когда режим работы не совпадает с рабочим днем или дополнительным интервалом.</p>
