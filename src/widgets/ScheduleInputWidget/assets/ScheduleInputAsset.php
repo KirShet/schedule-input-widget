@@ -15,7 +15,7 @@ class ScheduleInputAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\JqueryAsset',
-        'yii\bootstrap5\BootstrapAsset',
+        'yii\bootstrap\BootstrapAsset',
     ];  
     public $publishOptions = ['forceCopy' => true];
 }

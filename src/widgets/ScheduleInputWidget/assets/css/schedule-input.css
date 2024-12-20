@@ -237,7 +237,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.add-time-button {
+.time-button-add {
     background-color: #28B956;
     border: 1px dashed #28B956;
     color: #FFFFFF;
@@ -249,7 +249,7 @@ body {
     color: #28B956;
 }
 
-.add-time-button:hover {
+.time-button-add:hover {
     background-color: #239C47;
 }
 
