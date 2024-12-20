@@ -77,6 +77,15 @@
                 <button type="button" class="edit-work-time" title="Редактировать"></button>
                 <button type="button" class="remove-work-time" title="Удалить"></button>
             </div>
+            <div id="modal-overlay-message" class="modal-overlay-message">
+                        <div class="modal-content">
+                            <div class="modal-message">Вы хотите удалить это правило?</div>
+                            <div class="modal-buttons">
+                                <button class="cancel-btn">Отмена</button>
+                                <button class="delete-btn">Удалить</button>
+                            </div>
+                        </div>
+                    </div>
         </div>
         <div id="special-time-container"></div>
         <div id="work-time-container"></div>

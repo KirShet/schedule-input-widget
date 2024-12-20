@@ -1,6 +1,5 @@
 $(document).ready(function () {
     const modalOverlay = $('#modal-overlay');
-    const modalMessage = $('.modal-overlay-message');
     const selectedDateSpan = $('#selected-date');
     const workTimeContainer = $('#work-time-container');
     const specialTimeContainer = $('#special-time-container');
@@ -13,12 +12,6 @@ $(document).ready(function () {
     // Открытие модального окна
     $('.add-special-day-button').on('click', function () {
         modalOverlay.addClass('show');
-    });
-
-    // Закрытие модального окна
-    $('.cancel-btn').on('click', function () {
-        modalOverlay.removeClass('show');
-        modalMessage.removeClass('show');
     });
 
     // брос выборов
@@ -78,6 +71,15 @@ $(document).ready(function () {
                     <button type="button" class="edit-work-time" title="Редактировать"></button>
                     <button type="button" class="remove-work-time" title="Удалить"></button>
                 </div>
+                <div id="modal-overlay-message" class="modal-overlay-message">
+                        <div class="modal-content">
+                            <div class="modal-message">Вы хотите удалить это правило?</div>
+                            <div class="modal-buttons">
+                            <button class="cancel-btn">Отмена</button>
+                            <button class="delete-btn">Удалить</button>
+                        </div>
+                    </div>
+                </div>
             </div>
                 `;
         workTimeContainer.append(newEntry);
@@ -86,18 +88,32 @@ $(document).ready(function () {
         resetDates();
     });
         
-    // Удаление рабочей записи
-    $(document).on('click', '.remove-work-time', function () {
-        workItemToDelete = $(this).closest('.days-wrapper');
-        modalMessage.addClass('show');
-    });
-
-    // Подтверждение удаления
-    $('.delete-btn').on('click', function () {
-        if (workItemToDelete) {
-            workItemToDelete.remove();
-        }
-        modalMessage.removeClass('show');
+    $(document).ready(function () {
+        let modalMessage;  // Переносим объявление переменной сюда, чтобы она была доступна везде внутри $(document).ready
+    
+        // Удаление рабочей записи
+        $(document).on('click', '.remove-work-time', function () {
+            workItemToDelete = $(this).closest('.days-wrapper');
+            modalMessage = $(this).closest('.action-buttons').next('div');  // Присваиваем значение переменной
+            modalMessage.addClass('show');
+        });
+    
+        // Используем делегирование события на родительский элемент (например, body)
+        $(document).on('click', '.delete-btn', function () {
+            if (workItemToDelete) {
+                workItemToDelete.remove();
+            }
+            if (modalMessage) {  // Добавляем проверку на null или undefined
+                modalMessage.removeClass('show');
+            }
+        });
+    
+        // Закрытие модального окна
+        $(document).on('click', '.cancel-btn', function () {
+            if (modalMessage) {  // Добавляем проверку на null или undefined
+                modalMessage.removeClass('show');
+            }
+        });
     });
 
     $('form').on('submit', function(event) {
@@ -279,7 +295,16 @@ $(document).on('change', '.checkbox', function () {
                 <button type="button" class="edit-work-time" title="Редактировать"></button>
                 <button type="button" class="remove-work-time" title="Удалить"></button>
             </div>
-        </div>
+            <div id="modal-overlay-message" class="modal-overlay-message">
+                <div class="modal-content">
+                    <div class="modal-message">Вы хотите удалить это правило?</div>
+                    <div class="modal-buttons">
+                        <button class="cancel-btn">Отмена</button>
+                        <button class="delete-btn">Удалить</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
                     `;
                 specialTimeContainer.append(newEntry);
             
